@@ -49,7 +49,18 @@
   .route .pulse{fill:none;stroke:var(--accent);stroke-width:1.5;transform-origin:900px 210px;animation:pulse 3s ease-out infinite}
   @keyframes pulse{from{transform:scale(1);opacity:.8}to{transform:scale(5);opacity:0}}
   @media (prefers-reduced-motion:reduce){.route .plane,.route .pulse{animation:none}.route .p1{opacity:1;offset-distance:55%}}
-  @media (max-width:760px){.route{opacity:.35}}
+  .route-m{display:none}
+  .route-m .plane{transform-box:fill-box}
+  .route-m .m1{offset-path:path("M 195 120 Q 90 0 -20 40")}
+  .route-m .m2{offset-path:path("M 195 120 Q 320 -10 410 40");animation-delay:4s}
+  .route-m .m3{offset-path:path("M 195 120 Q 320 190 410 150");animation-delay:8s}
+  .route-m .pulse{transform-origin:195px 120px}
+  .route-m text{font-size:13px}
+  @media (max-width:760px){
+    .route{display:none}
+    .route-m{display:block;position:relative;inset:auto;width:100%;height:auto;margin:0 0 10px;overflow:visible}
+    .hero .wrap{padding-top:28px}
+  }
 
   /* Stats strip */
   .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:-28px;position:relative;z-index:2;box-shadow:0 10px 30px rgba(11,31,58,.08)}
@@ -116,6 +127,16 @@
     <g class="plane p3"><path transform="rotate(90) translate(-12 -12)" d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></g>
   </svg>
   <div class="wrap">
+    <svg class="route route-m" viewBox="0 0 390 170" aria-hidden="true">
+      <path class="arc" d="M 195 120 Q 90 0 -20 40"/>
+      <path class="arc" d="M 195 120 Q 320 -10 410 40"/>
+      <path class="arc" d="M 195 120 Q 320 190 410 150"/>
+      <circle class="pulse" cx="195" cy="120" r="6"/>
+      <circle class="dot" cx="195" cy="120" r="6"/><text x="172" y="152">BOS</text>
+      <g class="plane m1"><path transform="rotate(90) translate(-15 -15) scale(1.25)" d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></g>
+      <g class="plane m2"><path transform="rotate(90) translate(-15 -15) scale(1.25)" d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></g>
+      <g class="plane m3"><path transform="rotate(90) translate(-15 -15) scale(1.25)" d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></g>
+    </svg>
     <div class="mono">Aviation · Finance · Boston, MA · Open to relocation</div>
     <h1>Ash Rajesh</h1>
     <p class="lede">Associate at <strong>Wellington Management</strong>, combining technology with investment research and modeling in <strong>aviation</strong>. FAA student pilot.</p>
@@ -137,7 +158,7 @@
 
   <section class="about">
     <div class="sec-head"><span class="mono">01</span><h2>About</h2></div>
-    <p>I am an Associate at Wellington Management, a ~$1.3 trillion asset manager, where I develop technology for the firm's transaction engine and contribute to investment research in the transportation sector. That work includes building airline financial models, analyzing industry dynamics, and meeting with management teams of publicly traded airlines and aerospace companies.</p>
+    <p>I am an Associate at Wellington Management, a ~$1.3 trillion asset manager, where I develop technology for the firm's transaction engine and contribute to investment research in the transportation sector. That work includes building financial models, analyzing industry dynamics, and meeting with management teams of publicly traded airlines and aerospace companies.</p>
     <p>Aviation has been a lifelong interest. I hold an FAA Student Pilot Certificate, am training toward a private pilot license, and built <a href="https://notcirium.com" target="_blank" rel="noopener">notcirium.com</a> independently. I am based in Boston, open to relocation, and welcome conversations with professionals across aviation finance, investment banking, leasing, lending, and investment management.</p>
   </section>
 
